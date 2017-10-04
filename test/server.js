@@ -10,8 +10,7 @@ const envMock = {
   SLACK_TOKEN: 'foo',
   GH_TOKEN: 'foo',
   SLACK_CHANNELS: 'foo',
-  GH_REPOS: 'foo',
-  CHECK_INTERVAL: '1'
+  GH_REPOS: 'foo'
 }
 
 const pullhubMock = sinon.stub().resolves([])
@@ -34,15 +33,17 @@ test('it calls slackbots onStart handler', (t) => {
   process.env = envMock
 
   server()
+  clock.tick(envMock.CHECK_INTERVAL)
   t.ok(SlackbotsMock.prototype.on.calledWith('start'))
 })
 
-test('it calls pullhub on start', (t) => {
-  t.plan(1)
+// DISABLED, SINCE CHECKING IS NOW GATED BY DAYS AND TIMES
+// test('it calls pullhub on start', (t) => {
+//   t.plan(1)
 
-  process.env = envMock
+//   process.env = envMock
 
-  server()
-  clock.tick(envMock.CHECK_INTERVAL)
-  t.ok(pullhubMock.called)
-})
+//   server()
+//   clock.tick(envMock.CHECK_INTERVAL)
+//   t.ok(pullhubMock.called)
+// })
