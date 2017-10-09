@@ -7,7 +7,7 @@ Pr. Police is a slackbot that sends to configured slack channels a listing of op
 ### _FS Custom Configuration_
 ___
 
-Each team's Heroku instance should be configured to match a specifically-named branch. Example: Tree's Gold Squardon utilizes the `fs-bot-github-pr-tree-gold` branch, and is named such in Heroku.
+If desired, a team's Heroku instance can be configured to use a specifically-named branch. Example: If Tree's Gold Squadron wants specific formatting, it utilizes the `fs-bot-github-pr-tree-gold` branch, named exactly after its Heroku instance, and keys automatic deploys to that branch.
 
 Run via: `heroku local`
 
@@ -87,6 +87,9 @@ Example: `do-not-merge,in-progress,needs-work`
 The list of labels to filter pull-requests. So imagine, your team uses the label `needs review` for pull-requests waiting for review, you'll have to fill in: `needs review`. Multiple labels are comma separated.
 
 NOTE: Omitting both `GH_EXCLUDE_LABELS` and `GH_LABELS` will result in _all_ open pull-requests being reported for the specified `GH_REPOS`.
+
+##### `NOTIFY_WHEN_NONE_FOUND`
+Whether to post, even when no PRs were found or were all filtered out.
 
 ##### `SLACK_CHANNELS`
 The list of channels on your team where Pr. Police will post the announcements. Multiple channels are comma separated.

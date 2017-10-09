@@ -7,7 +7,7 @@
   "formation": {
     "worker": {
       "quantity": 1,
-      "size": "free"
+      "size": "Standard-1X"
     }
   },
   "env": {
@@ -17,7 +17,7 @@
     },
     "DEBUG": {
       "description": "Debug flag to enable more verbose logging",
-      "value": false
+      "value": "true"
     },
     "GH_TOKEN": {
       "description": "Github account token to access needed repositories",
@@ -42,12 +42,12 @@
       "required": false
     },
     "SLACK_CHANNELS": {
-      "description": "Slack channels to post the announcements, comma-separated. Required if SLACK_GROUPS is empty.",
+      "description": "Slack *public* channels to post the announcements to, comma-separated. Required if SLACK_GROUPS is empty.",
       "value": "",
       "required": false
     },
     "SLACK_GROUPS": {
-      "description": "Slack private groups to post the announcements, comma-separated. Required if SLACK_CHANNEL is empty.",
+      "description": "Slack *private* channels to post the announcements to, comma-separated. Required if SLACK_CHANNEL is empty.",
       "value": "",
       "required": false
     },
@@ -58,6 +58,11 @@
     },
     "SLACK_BOT_ICON": {
       "description": "URL of the bot icon to show when posting messages",
+      "value": "",
+      "required": false
+    },
+    "NOTIFY_WHEN_NONE_FOUND": {
+      "description": "Whether to post when no PRs were found",
       "value": "",
       "required": false
     },
