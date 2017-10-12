@@ -12,32 +12,32 @@
   },
   "env": {
     "DAYS_TO_RUN": {
-      "description": "Which days of the week to run on (locale-specific), comma-separated",
+      "description": "Which days of the week to run on (locale-specific), comma-separated.",
       "value": "Monday,Tuesday,Wednesday,Thursday,Friday"
     },
     "DEBUG": {
-      "description": "Debug flag to enable more verbose logging",
+      "description": "Debug flag to enable slightly more verbose logging. Leave empty to disable.",
       "value": "true"
     },
     "GH_TOKEN": {
-      "description": "Github account token to access needed repositories",
-      "value": "secret"
+      "description": "Github account token to access needed repositories. See: GITHUB_AUTH_TOKEN in https://github.com/fs-webdev/fs-config/blob/master/config/default.json",
+      "value": "{SECRET}"
     },
     "SLACK_TOKEN": {
-      "description": "Slack token for bot",
-      "value": "secret"
+      "description": "Slack token for bot. See: https://ldschurch.slack.com/apps/A0F7YS25R-bots",
+      "value": "{SECRET}"
     },
     "GH_REPOS": {
-      "description": "Repositories to watch in user/repo format, comma-separated",
-      "value": "johndoe/somerepo,johndoe/anotherrepo"
+      "description": "Repositories to watch in user/repo format, comma-separated.",
+      "value": "fs-webdev/fs-config"
     },
     "GH_EXCLUDE_LABELS": {
-      "description": "Repository labels that will exclude pull requests, comma-separated. Supercedes GH_LABELS",
-      "value": "",
+      "description": "Labels that will exclude PRs, comma-separated. Supercedes GH_LABELS.",
+      "value": "DO NOT MERGE,do-not-merge,in-progress,needs-work",
       "required": false
     },
     "GH_LABELS": {
-      "description": "Repository labels to filter pull requests, comma-separated",
+      "description": "Labels that will include PRs, comma-separated. Leave empty to report all except those caught by GH_EXCLUDE_LABELS.",
       "value": "",
       "required": false
     },
@@ -52,27 +52,27 @@
       "required": false
     },
     "SLACK_BOT_NAME": {
-      "description": "The name of the bot on your slack organization",
+      "description": "The name of the bot to diplay when posting messages.",
       "value": "",
       "required": false
     },
     "SLACK_BOT_ICON": {
-      "description": "URL of the bot icon to show when posting messages",
-      "value": "",
+      "description": "URL of the bot icon to show when posting messages.",
+      "value": "https://avatars.slack-edge.com/2017-08-19/228967565346_addfa8c9fc1c6454684a_48.png",
       "required": false
     },
     "NOTIFY_WHEN_NONE_FOUND": {
-      "description": "Whether to post when no PRs were found",
+      "description": "Whether to post when no PRs were found. Leave empty to turn off extra notifications.",
       "value": "",
       "required": false
     },
     "TIMES_TO_RUN": {
-      "description": "What times of day to run (24-hour format), comma-separated",
-      "value": "0900"
+      "description": "What times of day to run (24-hour format), comma-separated.",
+      "value": "0700,1300"
     },
     "TZ": {
-      "description": "The timezone the server should use. Heroku default is UTC. Uses tz database timezone format. Example: 'America/Los_Angeles'",
-      "value": "",
+      "description": "The timezone the server should use. Heroku default is UTC. Uses tz database timezone format. Example: 'America/Los_Angeles'.",
+      "value": "America/Denver",
       "required": false
     }
   }
