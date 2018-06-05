@@ -25,6 +25,7 @@
   "dependencies": {
     "minimist": "^1.2.0",
     "moment": "^2.22.2",
+    "moment-timezone": "^0.5.17",
     "pullhub": "^1.0.1",
     "slackbots": "^1.0.2"
   },
