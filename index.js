@@ -1,1 +1,2 @@
-module.exports = require('./lib/server')
+var server = require('./lib/server')
+server()
